@@ -32,7 +32,10 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-
+# vscode 编辑器设置
+settings.json
+# sqlite3数据库
+*.db
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
