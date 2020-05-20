@@ -1,4 +1,6 @@
 # translate_tet.py
+""" 使用前需要填入appid 和key """
+
 from tkinter import Label, Tk, Entry, Button, StringVar
 from urllib import request
 from urllib import parse
@@ -14,9 +16,9 @@ def translate_word(en_str):
     Form_Data['from'] = 'en'
     Form_Data['to'] = 'zh'
     Form_Data['q'] = en_str  # 要翻译的数据
-    Form_Data['appid'] = '20181223000251282'  # 申请的app id
-    Form_Data['salt'] = 'l435660288'
-    Key = 'XtvL6yH23m_k7ZcPTW1j'  # 平台分配的密钥
+    Form_Data['appid'] = ''  # 百度开发者平台申请的app id
+    Form_Data['salt'] = 'l435660288'  # 随机数
+    Key = ''  # 百度开发者平台分配的密钥
     m = Form_Data['appid'] + en_str + Form_Data['salt'] + Key
     m_MD5 = hashlib.md5(m.encode('utf-8'))
     Form_Data['sign'] = m_MD5.hexdigest()
@@ -31,7 +33,6 @@ def translate_word(en_str):
     translate_results = translate_results['trans_result'][0]['dst']
     print('翻译的结果是: %s' % (translate_results))  # 打印翻译信息
     return translate_results
-    a = 1
 
 
 def leftClick(event):
